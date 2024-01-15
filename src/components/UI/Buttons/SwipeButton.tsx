@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledSwipeButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledSwipeButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
   &:before {
     content: "";
@@ -12,7 +12,7 @@ const StyledSwipeButton = styled(BasicStyledButton)<ButtonStyledType>`
     left: 0;
     top: 0;
     background-color: ${(props) =>
-      props.$hoverStyled?.backgroundColor ?? props.$defaultButtonStyle.color};
+      props.$hoverStyled?.backgroundColor ?? props.$defaultCustomStyle.color};
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -31,7 +31,7 @@ const SwipeButton = (props: ButtonType) => {
   return (
     <StyledSwipeButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >

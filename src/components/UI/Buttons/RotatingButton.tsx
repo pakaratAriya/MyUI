@@ -1,12 +1,10 @@
-import { PropsWithChildren } from "react";
-import CSS from "csstype";
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledRotatingButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledRotatingButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
 
   &:before {
@@ -25,6 +23,11 @@ const StyledRotatingButton = styled(BasicStyledButton)<ButtonStyledType>`
   &:hover:before {
     transform: rotate(0);
   }
+
+  &:hover {
+    color: ${(props) => selectProps(props, "backgroundColor")};
+    background-color: ${(props) => selectProps(props, "color")};
+  }
 `;
 
 const RotatingButton = (props: ButtonType) => {
@@ -33,7 +36,7 @@ const RotatingButton = (props: ButtonType) => {
   return (
     <StyledRotatingButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >

@@ -1,46 +1,29 @@
 import { styled } from "styled-components";
 import CSS from "csstype";
+import { selectProps } from "../helpers/calculateHelper";
 const BasicStyledButton = styled.button<{
   $style?: CSS.Properties;
-  $defaultButtonStyle: CSS.Properties;
+  $defaultCustomStyle: CSS.Properties;
   $hoverStyled?: CSS.Properties;
 }>`
-  color: ${(props) => props.$style?.color ?? props.$defaultButtonStyle.color};
-  background-color: ${(props) =>
-    props.$style?.backgroundColor ?? props.$defaultButtonStyle.backgroundColor};
-  font-family: ${(props) =>
-    props.$style?.fontFamily ?? props.$defaultButtonStyle.fontFamily};
-  font-size: ${(props) =>
-    props.$style?.fontSize ?? props.$defaultButtonStyle.fontSize};
-  font-weight: ${(props) =>
-    props.$style?.fontWeight ?? props.$defaultButtonStyle.fontWeight};
-  border: ${(props) =>
-    props.$style?.border ?? props.$defaultButtonStyle.border};
-  border-radius: ${(props) =>
-    props.$style?.borderRadius ?? props.$defaultButtonStyle.borderRadius};
-  padding: ${(props) =>
-    props.$style?.padding ?? props.$defaultButtonStyle.padding};
-  width: ${(props) => props.$style?.width ?? props.$defaultButtonStyle.width};
-  height: ${(props) =>
-    props.$style?.height ?? props.$defaultButtonStyle.height};
-  margin: ${(props) =>
-    props.$style?.margin ?? props.$defaultButtonStyle.margin};
-  line-height: ${(props) =>
-    props.$style?.lineHeight ?? props.$defaultButtonStyle.lineHeight};
-  position: ${(props) =>
-    props.$style?.position ?? props.$defaultButtonStyle.position};
-  text-decoration: ${(props) =>
-    props.$style?.textDecoration ?? props.$defaultButtonStyle.textDecoration};
-  cursor: ${(props) =>
-    props.$style?.cursor ?? props.$defaultButtonStyle.cursor};
-  display: ${(props) =>
-    props.$style?.display ?? props.$defaultButtonStyle.display};
-    z-index: z-index: ${(props) =>
-      props.$style?.zIndex ?? props.$defaultButtonStyle.zIndex};
-  transition: all
-    ${(props) =>
-      props.$style?.transitionDuration ??
-      props.$defaultButtonStyle.transitionDuration};
+  color: ${(props) => selectProps(props, "color")};
+  background-color: ${(props) => selectProps(props, "backgroundColor")};
+  font-family: ${(props) => selectProps(props, "fontFamily")};
+  font-size: ${(props) => selectProps(props, "fontSize")};
+  font-weight: ${(props) => selectProps(props, "fontWeight")};
+  border: ${(props) => selectProps(props, "border")};
+  border-radius: ${(props) => selectProps(props, "borderRadius")};
+  padding: ${(props) => selectProps(props, "padding")};
+  width: ${(props) => selectProps(props, "width")};
+  height: ${(props) => selectProps(props, "height")};
+  margin: ${(props) => selectProps(props, "margin")};
+  line-height: ${(props) => selectProps(props, "lineHeight")};
+  position: ${(props) => selectProps(props, "position")};
+  text-decoration: ${(props) => selectProps(props, "textDecoration")};
+  cursor: ${(props) => selectProps(props, "cursor")};
+  display: ${(props) => selectProps(props, "display")};
+  z-index: ${(props) => selectProps(props, "zIndex")};
+  transition: all ${(props) => selectProps(props, "transitionDuration")};
   &:hover {
     color: ${(props) => props.$hoverStyled?.color ?? "white"};
     background-color: Transparent;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import {
   decreaseCSSValue,
@@ -8,7 +8,7 @@ import {
   selectProps,
 } from "../helpers/calculateHelper";
 
-const StyledPulsingButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledPulsingButton = styled(BasicStyledButton)<CustomStyledType>`
   border-radius: 50%;
   &:before {
     border-radius: 50%;
@@ -53,7 +53,7 @@ const PulsingButton = (props: ButtonType) => {
   return (
     <StyledPulsingButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
       $style={style}
     >

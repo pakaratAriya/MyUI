@@ -1,15 +1,11 @@
 import { styled } from "styled-components";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledSpan from "./BasicSpan";
-import {
-  decreaseCSSValue,
-  increaseCSSValue,
-  selectProps,
-} from "../helpers/calculateHelper";
+import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
-const StyledSplittedButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledSplittedButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
   &:before,
   &:after {
@@ -40,7 +36,7 @@ const StyledSplittedButton = styled(BasicStyledButton)<ButtonStyledType>`
   }
 `;
 
-const StyledSplittedSpan = styled(BasicStyledSpan)<ButtonStyledType>`
+const StyledSplittedSpan = styled(BasicStyledSpan)<CustomStyledType>`
   border-radius: 0px;
   opacity: 1;
 
@@ -88,13 +84,13 @@ const SplittedButton = (props: ButtonType) => {
   return (
     <StyledSplittedButton
       onClick={onClick}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
       $style={style}
     >
       <StyledSplittedSpan
         onClick={onClick}
-        $defaultButtonStyle={defaultButtonStyle2}
+        $defaultCustomStyle={defaultButtonStyle2}
         $hoverStyled={hoverStyled}
         $style={style}
       >

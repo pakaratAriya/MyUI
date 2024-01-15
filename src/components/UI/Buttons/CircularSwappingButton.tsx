@@ -1,14 +1,12 @@
-import { PropsWithChildren } from "react";
-import CSS from "csstype";
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
 const StyledCircularSwappingButton = styled(
   BasicStyledButton
-)<ButtonStyledType>`
+)<CustomStyledType>`
   overflow: hidden;
 
   &:before {
@@ -40,7 +38,7 @@ const CircularSwappingButton = (props: ButtonType) => {
     <StyledCircularSwappingButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
     >
       {props.children}

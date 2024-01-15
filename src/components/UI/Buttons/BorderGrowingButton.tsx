@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
 import BasicStyledSpan from "./BasicSpan";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledBorderGrowingButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledBorderGrowingButton = styled(BasicStyledButton)`
   border-radius: 0;
   border: 0;
   overflow: hidden;
@@ -42,7 +42,7 @@ const StyledBorderGrowingButton = styled(BasicStyledButton)<ButtonStyledType>`
   }
 `;
 
-const BorderGrowingSpan = styled(BasicStyledSpan)<ButtonStyledType>`
+const BorderGrowingSpan = styled(BasicStyledSpan)<CustomStyledType>`
   color: transparent;
   position: absolute;
   background-color: transparent;
@@ -88,13 +88,13 @@ const BorderGrowingButton = (props: ButtonType) => {
     <StyledBorderGrowingButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
     >
       {props.children}
       <BorderGrowingSpan
         $style={style}
-        $defaultButtonStyle={spanStyle}
+        $defaultCustomStyle={spanStyle}
       ></BorderGrowingSpan>
     </StyledBorderGrowingButton>
   );

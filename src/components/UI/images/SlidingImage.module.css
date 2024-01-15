@@ -1,0 +1,16 @@
+.caption {
+  background-color: black;
+  transform: translateX(-100%);
+}
+
+.image {
+  transform: translateX(0);
+}
+
+.container:hover .caption {
+  transform: translateX(0);
+}
+
+.container:hover .image {
+  transform: translateX(100%);
+}

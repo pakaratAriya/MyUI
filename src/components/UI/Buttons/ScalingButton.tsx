@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { selectProps } from "../helpers/calculateHelper";
 
 const StyledScalingButton = styled(BasicStyledButton)<
-  ButtonStyledType & { $content: string }
+  CustomStyledType & { $content: string }
 >`
   overflow: hidden;
 
@@ -38,7 +38,7 @@ const ScalingButton = (props: ButtonType) => {
     <StyledScalingButton
       onClick={props.onClick}
       $content={content}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >

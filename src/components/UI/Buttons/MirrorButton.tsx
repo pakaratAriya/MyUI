@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledMirrorButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledMirrorButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
   &:before {
     content: "";
@@ -12,6 +12,7 @@ const StyledMirrorButton = styled(BasicStyledButton)<ButtonStyledType>`
     left: 0;
     top: -50%;
     background-color: white;
+    box-shadow: 0 0 10px white, 0 0 30px white, 0 0 50px white;
     height: 10px;
     width: 100%;
     transform-origin: bottom left;
@@ -34,7 +35,7 @@ const MirrorButton = (props: ButtonType) => {
   return (
     <StyledMirrorButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >

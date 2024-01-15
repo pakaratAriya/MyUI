@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { multiplyCSSValue, selectProps } from "../helpers/calculateHelper";
 
 const StyledCalendarButton = styled(BasicStyledButton)<
-  ButtonStyledType & { $thirdColor: string; $secondColor: string }
+  CustomStyledType & { $thirdColor: string; $secondColor: string }
 >`
   &:before,
   &:after {
-    content: "${(props) => props.$defaultButtonStyle.content}";
+    content: "${(props) => props.$defaultCustomStyle.content}";
     position: absolute;
     color: white;
     left: 0;
@@ -50,7 +50,7 @@ const CalendarButton = (
       $style={style}
       $secondColor={props.secondColor ?? "gray"}
       $thirdColor={props.thirdColor ?? "black"}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
     >
       {props.children}

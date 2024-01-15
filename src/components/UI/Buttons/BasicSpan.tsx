@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
 import CSS from "csstype";
+import { selectProps } from "../helpers/calculateHelper";
 
 const BasicStyledSpan = styled.span<{
   $style?: CSS.Properties;
-  $defaultButtonStyle: CSS.Properties;
+  $defaultCustomStyle: CSS.Properties;
   $content?: string;
 }>`
     content: "${(props) => props.$content ?? ""}";
@@ -11,11 +12,8 @@ const BasicStyledSpan = styled.span<{
     position: absolute;
     top: 0;
     left: 0;
-    color: ${(props) =>
-      props.$style?.backgroundColor ??
-      props.$defaultButtonStyle.backgroundColor};
-    background-color: ${(props) =>
-      props.$style?.color ?? props.$defaultButtonStyle.color};
+    color: ${(props) => selectProps(props, "backgroundColor")};
+    background-color: ${(props) => selectProps(props, "color")};
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -24,9 +22,7 @@ const BasicStyledSpan = styled.span<{
     justify-content: center;
     border-radius: 10px;
     transition: all
-    ${(props) =>
-      props.$style?.transitionDuration ??
-      props.$defaultButtonStyle.transitionDuration};
+    ${(props) => selectProps(props, "transitionDuration")};
 
   }
     &:hover {

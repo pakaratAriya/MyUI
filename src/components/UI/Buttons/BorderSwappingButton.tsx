@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { multiplyCSSValue, selectProps } from "../helpers/calculateHelper";
 
 const StyledBorderSwappingButton = styled(BasicStyledButton)<
-  ButtonStyledType & { $color1?: string; $color2?: string }
+  CustomStyledType & { $color1?: string; $color2?: string }
 >`
   border: 0;
   background-color: Transparent;
@@ -58,7 +58,7 @@ const BorderSwappingButton = (
   return (
     <StyledBorderSwappingButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
       $color1={color1}

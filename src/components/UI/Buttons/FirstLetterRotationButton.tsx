@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
 import BasicStyledSpan from "./BasicSpan";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
 const StyledFirstLetterRotationButton = styled(
   BasicStyledButton
-)<ButtonStyledType>`
+)<CustomStyledType>`
   border-radius: 0;
   color: ${(props) => selectProps(props, "color")};
   &:before {
@@ -33,7 +33,7 @@ const StyledFirstLetterRotationButton = styled(
 `;
 
 const FirstLetterRotationSpan = styled(BasicStyledSpan)<
-  ButtonStyledType & { $content?: string }
+  CustomStyledType & { $content?: string }
 >`
   z-index: ${(props) => selectProps(props, "zIndex")};
   color: transparent;
@@ -67,12 +67,12 @@ const FirstLetterRotationButton = (props: ButtonType) => {
     <StyledFirstLetterRotationButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
     >
       <FirstLetterRotationSpan
         $style={style}
-        $defaultButtonStyle={spanStyle}
+        $defaultCustomStyle={spanStyle}
         $content={props.children?.toString()[0]}
       >
         {props.children?.toString()[0]}

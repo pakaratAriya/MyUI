@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
 import BasicStyledSpan from "./BasicSpan";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
-const StyledCutEffectButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledCutEffectButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
   border-radius: 5px;
   border: 0;
@@ -17,7 +17,7 @@ const StyledCutEffectButton = styled(BasicStyledButton)<ButtonStyledType>`
   }
 `;
 
-const CutEffectSpan = styled(BasicStyledSpan)<ButtonStyledType>`
+const CutEffectSpan = styled(BasicStyledSpan)<CustomStyledType>`
   border: 2px solid black;
   position: absolute;
   top: 0;
@@ -60,13 +60,13 @@ const CutEffectButton = (props: ButtonType) => {
     <StyledCutEffectButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
     >
       {props.children}
       <CutEffectSpan
         $style={style}
-        $defaultButtonStyle={spanStyle}
+        $defaultCustomStyle={spanStyle}
       ></CutEffectSpan>
     </StyledCutEffectButton>
   );

@@ -1,13 +1,11 @@
-import { PropsWithChildren } from "react";
-import CSS from "csstype";
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
 const StyledTwoPartsSkewButton = styled(BasicStyledButton)<
-  ButtonStyledType & { $color1?: string; $color2?: string }
+  CustomStyledType & { $color1?: string; $color2?: string }
 >`
   background-color: Transparent;
   border: 0;
@@ -49,7 +47,7 @@ const StyledTwoPartsSkewButton = styled(BasicStyledButton)<
     top: 0;
   }
   &:hover {
-    color: ${(props) => props.$style?.color ?? props.$defaultButtonStyle.color};
+    color: ${(props) => props.$style?.color ?? props.$defaultCustomStyle.color};
   }
 `;
 
@@ -61,7 +59,7 @@ const TwoPartsSkewButton = (
   return (
     <StyledTwoPartsSkewButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
       $color1={color1}

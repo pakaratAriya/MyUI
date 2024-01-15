@@ -1,11 +1,10 @@
-import { PropsWithChildren } from "react";
 import styled, { keyframes } from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
-const StyledWavyButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledWavyButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
 `;
 
@@ -14,7 +13,7 @@ const wavyKeyframes = keyframes`
   100% {background-position-x: 118px;}
 `;
 
-const WavyDiv = styled.div<ButtonStyledType>`
+const WavyDiv = styled.div<CustomStyledType>`
   content: "";
   position: absolute;
   width: 100%;
@@ -45,14 +44,14 @@ const WavyButton = (props: ButtonType) => {
   return (
     <StyledWavyButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >
       {props.children}
       <WavyDiv
         $style={style}
-        $defaultButtonStyle={defaultButtonStyle}
+        $defaultCustomStyle={defaultButtonStyle}
       ></WavyDiv>
     </StyledWavyButton>
   );

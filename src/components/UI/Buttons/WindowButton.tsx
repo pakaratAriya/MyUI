@@ -1,11 +1,11 @@
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { styled } from "styled-components";
 import BasicStyledButton from "./BasicButton";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import { selectProps } from "../helpers/calculateHelper";
 
 const StyledWindowButton = styled(BasicStyledButton)<
-  ButtonStyledType & { $firstColor?: string; $secondColor?: string }
+  CustomStyledType & { $firstColor?: string; $secondColor?: string }
 >`
   border: 0;
   background-color: Transparent;
@@ -55,7 +55,7 @@ const WindowButton = (
   return (
     <StyledWindowButton
       onClick={onClick}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $firstColor={firstColor}
       $hoverStyled={hoverStyled}
       $secondColor={secondColor}

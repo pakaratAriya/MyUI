@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
 import BasicStyledSpan from "./BasicSpan";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledThreeDotsButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledThreeDotsButton = styled(BasicStyledButton)<CustomStyledType>`
   border: 0;
   &:before,
   &:after {
@@ -13,7 +13,7 @@ const StyledThreeDotsButton = styled(BasicStyledButton)<ButtonStyledType>`
     position: absolute;
     top: 50%;
     background-color: ${(props) =>
-      props.$hoverStyled?.backgroundColor ?? props.$defaultButtonStyle.color};
+      props.$hoverStyled?.backgroundColor ?? props.$defaultCustomStyle.color};
     height: 10px;
     width: 10px;
     opacity: 0;
@@ -26,13 +26,13 @@ const StyledThreeDotsButton = styled(BasicStyledButton)<ButtonStyledType>`
 
     box-shadow: 50px 0 0
       ${(props) =>
-        props.$hoverStyled?.backgroundColor ?? props.$defaultButtonStyle.color};
+        props.$hoverStyled?.backgroundColor ?? props.$defaultCustomStyle.color};
   }
   &:before {
     left: 0;
     box-shadow: -50px 0 0
       ${(props) =>
-        props.$hoverStyled?.backgroundColor ?? props.$defaultButtonStyle.color};
+        props.$hoverStyled?.backgroundColor ?? props.$defaultCustomStyle.color};
   }
   &:hover:before,
   &:hover:after {
@@ -41,7 +41,7 @@ const StyledThreeDotsButton = styled(BasicStyledButton)<ButtonStyledType>`
     transform: translateY(-50%);
     box-shadow: 0 0 0
       ${(props) =>
-        props.$hoverStyled?.backgroundColor ?? props.$defaultButtonStyle.color};
+        props.$hoverStyled?.backgroundColor ?? props.$defaultCustomStyle.color};
     opacity: 1;
   }
   &:hover:after {
@@ -52,7 +52,7 @@ const StyledThreeDotsButton = styled(BasicStyledButton)<ButtonStyledType>`
   }
 `;
 
-const ThreeDotsBasicSpan = styled(BasicStyledSpan)<ButtonStyledType>`
+const ThreeDotsBasicSpan = styled(BasicStyledSpan)<CustomStyledType>`
   transform: scale(1);
   transition: all 400ms;
   transition-delay: 150ms;
@@ -67,12 +67,12 @@ const ThreeDotsButton = (props: ButtonType) => {
     <StyledThreeDotsButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
     >
       <ThreeDotsBasicSpan
         $style={style}
-        $defaultButtonStyle={defaultButtonStyle}
+        $defaultCustomStyle={defaultButtonStyle}
         $content={props.children?.toString()}
       >
         {props.children}

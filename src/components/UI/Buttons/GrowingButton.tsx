@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
 import BasicStyledButton from "./BasicButton";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import { selectProps } from "../helpers/calculateHelper";
 
-const StyledGrowingButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledGrowingButton = styled(BasicStyledButton)<CustomStyledType>`
   border: 0;
   &:before,
   &:after {
@@ -57,7 +57,7 @@ const GrowingButton = (props: ButtonType) => {
     <StyledGrowingButton
       onClick={props.onClick}
       $style={style}
-      $defaultButtonStyle={defaultButtonStyle2}
+      $defaultCustomStyle={defaultButtonStyle2}
       $hoverStyled={hoverStyled}
     >
       {props.children}

@@ -1,8 +1,8 @@
 import CSS from "csstype";
 import { PropsWithChildren } from "react";
-interface ButtonStyledType {
+interface CustomStyledType {
   $style?: CSS.Properties;
-  $defaultButtonStyle: CSS.Properties;
+  $defaultCustomStyle: CSS.Properties;
   $hoverStyled?: CSS.Properties;
 }
 
@@ -11,4 +11,4 @@ export type ButtonType = PropsWithChildren<{
   hoverStyled?: CSS.Properties;
   onClick: () => void;
 }>;
-export default ButtonStyledType;
+export default CustomStyledType;

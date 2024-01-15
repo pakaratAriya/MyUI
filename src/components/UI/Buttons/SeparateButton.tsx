@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { defaultButtonStyle } from "../Constants/DefaultStyled";
-import ButtonStyledType, { ButtonType } from "../models/Button";
+import { defaultButtonStyle } from "../constants/DefaultStyled";
+import CustomStyledType, { ButtonType } from "../models/Button";
 import BasicStyledButton from "./BasicButton";
 import { decreaseCSSValue, selectProps } from "../helpers/calculateHelper";
 
-const StyledSeparateButton = styled(BasicStyledButton)<ButtonStyledType>`
+const StyledSeparateButton = styled(BasicStyledButton)<CustomStyledType>`
   overflow: hidden;
 
   &:before,
@@ -37,7 +37,7 @@ const SeparateButton = (props: ButtonType) => {
   return (
     <StyledSeparateButton
       onClick={props.onClick}
-      $defaultButtonStyle={defaultButtonStyle}
+      $defaultCustomStyle={defaultButtonStyle}
       $hoverStyled={hoverStyled}
       $style={style}
     >
