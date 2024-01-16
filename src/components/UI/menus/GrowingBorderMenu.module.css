@@ -1,0 +1,35 @@
+.a {
+}
+
+.ul {
+}
+
+.a:before,
+.a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  height: 2px;
+  width: 80%;
+  margin: auto 10%;
+  background-color: black;
+}
+
+.a:before {
+  top: 0;
+  transform-origin: right;
+}
+
+.a:after {
+  transform-origin: left;
+  bottom: 0;
+}
+
+.li:hover .a:before,
+.li:hover .a:after,
+.active.a:before,
+.active.a:after {
+  transform: scaleX(1);
+  background-color: red;
+}

@@ -1,9 +1,9 @@
-ul {
+.mainNavUl {
   padding: 0;
   display: flex;
 }
 
-a {
+.mainNavA {
   text-decoration: none;
   color: rgb(52, 52, 0);
   border-radius: 4px;
@@ -22,7 +22,7 @@ a {
   margin: 20px;
 }
 
-a:hover {
+.mainNavA:hover {
   box-shadow: 0 0 10px black;
   color: white;
 }

@@ -1,6 +1,6 @@
 import CSS from "csstype";
 
-export const TestImagePath = "/images/zebrastrika.png";
+export const TestImagePath = "/images/umbreon.png";
 
 export const defaultButtonStyle: CSS.Properties = {
   transitionDuration: "400ms",
@@ -32,13 +32,14 @@ export const defaultImageStyle: CSS.Properties = {
 };
 
 export const defaultImageContainerStyle: CSS.Properties = {
-  width: "200px",
+  width: "400px",
   height: "200px",
   position: "relative",
   overflow: "hidden",
   margin: "20px",
   display: "inline-block",
   transitionDuration: "400ms",
+  zIndex: 0,
 };
 
 export const defaultImageCaptionStyle: CSS.Properties = {
@@ -52,5 +53,29 @@ export const defaultImageCaptionStyle: CSS.Properties = {
   justifyContent: "center",
   alignItems: "center",
   color: "white",
+  transitionDuration: "400ms",
+  zIndex: 0,
+};
+
+export const defaultMenuUnorderedListStyle: CSS.Properties = {
+  padding: 0,
+  margin: "20px",
+  display: "flex",
+  flexWrap: "wrap",
+  transitionDuration: "400ms",
+};
+
+export const defaultMenuListItemStyle: CSS.Properties = {
+  listStyle: "none",
+  transitionDuration: "400ms",
+};
+
+export const defaultMenuAnchorStyle: CSS.Properties = {
+  textDecoration: "none",
+  color: "#3d3d3d",
+  fontSize: "22px",
+  display: "block",
+  padding: "10px 15px",
+  position: "relative",
   transitionDuration: "400ms",
 };

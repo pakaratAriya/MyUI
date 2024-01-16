@@ -1,0 +1,16 @@
+.caption {
+  height: auto;
+  bottom: -1px;
+  top: auto;
+  transform: translateY(100%);
+  background-color: black;
+}
+
+.container:hover .caption {
+  transform: translateY(0);
+}
+
+.image {
+  transform: translateY(0);
+  height: auto;
+}

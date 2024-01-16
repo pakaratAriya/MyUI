@@ -6,13 +6,15 @@ const MainNavigation = () => {
   return (
     <header>
       <nav>
-        <ul>
+        <ul className={classes.mainNavUl}>
           {ExampleData.allPagesData.map((data) => (
             <li className={classes.nav} key={data.id}>
               <NavLink
                 to={`/${ExampleData.category}/${data.path}`}
                 className={({ isActive }) =>
-                  isActive ? classes.active : undefined
+                  isActive
+                    ? `${classes.mainNavA} ${classes.active}`
+                    : classes.mainNavA
                 }
               >
                 {data.title}

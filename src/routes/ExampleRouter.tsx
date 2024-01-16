@@ -2,6 +2,7 @@ import { RouteObject, Outlet } from "react-router-dom";
 import ButtonExamplesPage from "../pages/ButtonExamples";
 import ImageExamplesPage from "../pages/ImageExamples";
 import { CategoryDataType } from "./RouterDataType";
+import MenuExamplesPage from "../pages/MenuExamples";
 
 export const ExampleData: CategoryDataType = {
   category: "examples",
@@ -17,6 +18,12 @@ export const ExampleData: CategoryDataType = {
       title: "Images",
       path: "image",
       page: <ImageExamplesPage />,
+    },
+    {
+      id: "menu",
+      title: "Menu",
+      path: "menu",
+      page: <MenuExamplesPage />,
     },
   ],
 };

@@ -1,3 +1,7 @@
+.container {
+  border: 10px solid white;
+}
+
 .image {
   transform: scale(1) rotate(0deg);
 }

@@ -5,24 +5,13 @@ import {
 } from "./BasicImage";
 import { ImageWithContentType } from "../models/Image";
 import styled from "styled-components";
+import classes from "./PartialSlidingImage.module.css";
 import { useEffect, useState } from "react";
 
 // TODO: Make slide direction options
 const StyledPartialSlideContainer = styled(BasicStyledImageContainer)``;
-const StyledPartialSlideCaption = styled(BasicStyledImageCaption)`
-  height: auto;
-  bottom: -1px;
-  top: auto;
-  transform: translateY(100%);
-  background-color: black;
-
-  ${StyledPartialSlideContainer}:hover & {
-    transform: translateY(0);
-  }
-`;
+const StyledPartialSlideCaption = styled(BasicStyledImageCaption)``;
 const StyledPartialSlideImage = styled(BasicStyledImage)<{ height: string }>`
-  transform: translateY(0);
-  height: auto;
   ${StyledPartialSlideContainer}:hover & {
     transform: translateY(-${(props) => `${props.height}`}px);
   }
@@ -44,17 +33,17 @@ const PartilaSlidingImage = (props: ImageWithContentType) => {
   } = props;
   return (
     <StyledPartialSlideContainer
-      className={containerClassName}
+      className={`${classes.container} ${containerClassName}`}
       style={containerStyle}
     >
       <StyledPartialSlideImage
-        className={imageClassName}
+        className={`${classes.image} ${imageClassName}`}
         src={src}
         style={imageStyle}
         height={height}
       />
       <StyledPartialSlideCaption
-        className={captionClassName}
+        className={`${classes.caption} ${captionClassName}`}
         style={captionStyle}
         ref={(r) => {
           captionRef = r;
