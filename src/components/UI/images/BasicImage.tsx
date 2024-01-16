@@ -39,6 +39,9 @@ export const BasicStyledImageCaption = styled.div`
   align-items: ${defaultImageCaptionStyle.alignItems};
   color: ${defaultImageCaptionStyle.color};
   transition: all ${defaultImageCaptionStyle.transitionDuration};
+  & > * {
+    margin: 0;
+  }
 `;
 
 const BasicImage = (props: BasicImageWithContentType) => {

@@ -1,8 +1,9 @@
 import BasicImage from "./BasicImage";
+import RotateImageWithTextClasses from "./RotateImageWithText.module.css";
 import RotateImageClasses from "./RotateImage.module.css";
 import { ImageWithContentType } from "../models/Image";
 
-const RotateImage = (props: ImageWithContentType) => {
+const RotateImageWithText = (props: ImageWithContentType) => {
   const {
     src,
     captionClassName,
@@ -15,8 +16,8 @@ const RotateImage = (props: ImageWithContentType) => {
   return (
     <BasicImage
       src={src}
-      containerClassName={`${RotateImageClasses.container} ${containerClassName}`}
-      captionClassName={`${RotateImageClasses.caption} ${captionClassName}`}
+      containerClassName={`${RotateImageWithTextClasses.container} ${RotateImageClasses.container} ${containerClassName}`}
+      captionClassName={`${RotateImageWithTextClasses.caption} ${captionClassName}`}
       imageClassName={`${RotateImageClasses.image} ${imageClassName}`}
       captionStyle={captionStyle}
       containerStyle={containerStyle}
@@ -27,4 +28,4 @@ const RotateImage = (props: ImageWithContentType) => {
   );
 };
 
-export default RotateImage;
+export default RotateImageWithText;

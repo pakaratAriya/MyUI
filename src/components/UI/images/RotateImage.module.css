@@ -6,11 +6,6 @@
   transform: scale(1.5) rotate(10deg);
 }
 
-.caption {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-}
-
-.caption:hover {
-  opacity: 1;
+.imageborder {
+  border: 2px solid white;
 }
