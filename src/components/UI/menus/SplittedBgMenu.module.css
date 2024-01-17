@@ -1,0 +1,149 @@
+.li {
+  margin: 10px 15px;
+}
+
+.li:hover .a,
+.active.a {
+  color: white;
+}
+
+.span {
+  content: "";
+  position: absolute;
+  transition: all 100ms;
+  z-index: -1;
+}
+
+.spanLeft,
+.spanRight,
+.spanCenter {
+  transform: scaleX(0);
+  width: 100%;
+  height: 25%;
+  background-color: black;
+}
+
+.spanUp,
+.spanDown {
+  transform: scaleY(0);
+  width: 25%;
+  height: 100%;
+  background-color: black;
+}
+
+.spanLeft:nth-child(1),
+.spanRight:nth-child(1),
+.spanCenter:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.spanLeft:nth-child(2),
+.spanRight:nth-child(2),
+.spanCenter:nth-child(2) {
+  top: 25%;
+  left: 0;
+}
+
+.spanLeft:nth-child(3),
+.spanRight:nth-child(3),
+.spanCenter:nth-child(3) {
+  top: 50%;
+  left: 0;
+}
+
+.spanLeft:nth-child(4),
+.spanRight:nth-child(4),
+.spanCenter:nth-child(4) {
+  top: 75%;
+  left: 0;
+}
+
+.spanUp:nth-child(1),
+.spanDown:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.spanUp:nth-child(2),
+.spanDown:nth-child(2) {
+  top: 0;
+  left: 25%;
+}
+
+.spanUp:nth-child(3),
+.spanDown:nth-child(3) {
+  top: 0;
+  left: 50%;
+}
+
+.span:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.span:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.span:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.span:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+.span.reverse:nth-child(1) {
+  transition-delay: 300ms;
+}
+
+.span.reverse:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.span.reverse:nth-child(3) {
+  transition-delay: 100ms;
+}
+
+.span.reverse:nth-child(4) {
+  transition-delay: 0ms;
+}
+
+.spanUp:nth-child(4),
+.spanDown:nth-child(4) {
+  top: 0;
+  left: 75%;
+  transition-delay: 300ms;
+}
+
+.li:hover .spanLeft,
+.li:hover .spanRight,
+.li:hover .spanCenter,
+.active > .spanLeft,
+.active > .spanRight,
+.active > .spanCenter {
+  transform: scaleX(1);
+}
+
+.li:hover .spanUp,
+.li:hover .spanDown,
+.active > .spanUp,
+.active > .spanDown {
+  transform: scaleY(1);
+}
+
+.spanLeft {
+  transform-origin: left;
+}
+
+.spanRight {
+  transform-origin: right;
+}
+
+.spanUp {
+  transform-origin: top;
+}
+
+.spanDown {
+  transform-origin: bottom;
+}

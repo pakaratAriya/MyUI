@@ -20,3 +20,10 @@ export type ImageWithContentType = PropsWithChildren<{
   imageStyle?: React.CSSProperties;
   src: string;
 }>;
+
+export type AnimationDirectionType =
+  | "left"
+  | "right"
+  | "up"
+  | "down"
+  | "center";

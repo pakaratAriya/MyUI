@@ -16,10 +16,7 @@ export type BasicMenuClassNameType = {
   activeClassName?: string;
 };
 
-export type BasicMenuBarDataType = BasicMenuClassNameType &
-  BasicMenuType & {
-    name?: string;
-  };
+export type BasicMenuBarDataType = BasicMenuClassNameType & BasicMenuType;
 
 export const BasicStyledMenuUnorderedList = styled.ul`
   padding: ${defaultMenuUnorderedListStyle.padding};
@@ -42,7 +39,7 @@ const BasicMenuBar = (props: BasicMenuBarDataType) => {
       {menuData.map((item, index) => (
         <BasicMenuItem
           key={`menubar-${index}-${item.children?.toString()}`}
-          to={`${item.to}-menubar-${props.name}`}
+          to={item.to}
           aClassName={aClassName}
           listClassName={listClassName}
           activeClassName={activeClassName}

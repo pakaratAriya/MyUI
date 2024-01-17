@@ -1,0 +1,56 @@
+.a {
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.li {
+  padding: 5px;
+}
+
+.a:before,
+.a:after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+.a:before {
+  bottom: 4px;
+  left: 4px;
+  border-width: 0 0 2px 2px;
+}
+
+.a:after {
+  top: 4px;
+  right: 4px;
+  border-width: 2px 2px 0 0;
+}
+
+.li:hover .a:before,
+.li:hover .a:after,
+.active.a:before,
+.active.a:after {
+  opacity: 1;
+}
+
+.li:hover .a:before,
+.active.a:before {
+  bottom: -6px;
+  left: -6px;
+}
+
+.li:hover .a:after,
+.active.a:after {
+  top: -6px;
+  right: -6px;
+}
+
+.a:hover,
+.active.a {
+  background-color: red;
+}

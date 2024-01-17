@@ -1,0 +1,48 @@
+.a {
+  border-radius: 2px;
+  margin: 10px;
+  overflow: visible;
+}
+
+.li {
+  padding: 5px;
+}
+
+.a:before,
+.a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  top: 120%;
+  transform: translateX(0);
+}
+
+.a:before {
+  left: 0;
+  background-color: cyan;
+  transform-origin: left;
+}
+
+.a:after {
+  right: 0;
+  background-color: pink;
+  transform-origin: right;
+}
+
+.li:hover .a:before,
+.li:hover .a:after,
+.active.a:before,
+.active.a:after {
+  width: 40%;
+}
+
+.li:hover .a:before,
+.active.a:before {
+  transform: translateX(125%);
+}
+
+.li:hover .a:after,
+.active.a:after {
+  transform: translateX(-125%);
+}

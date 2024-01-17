@@ -1,7 +1,7 @@
 import BasicMenuBar, { BasicMenuBarDataType } from "./BasicMenuBar";
-import classes from "./GrowingBorderMenu.module.css";
+import classes from "./MovingBottomBorderMenu.module.css";
 
-const GrowingBorderMenu = (props: BasicMenuBarDataType) => {
+const MovingBottomBorderMenu = (props: BasicMenuBarDataType) => {
   const {
     menuData,
     aClassName,
@@ -20,4 +20,4 @@ const GrowingBorderMenu = (props: BasicMenuBarDataType) => {
   );
 };
 
-export default GrowingBorderMenu;
+export default MovingBottomBorderMenu;

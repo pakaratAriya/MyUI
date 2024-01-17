@@ -39,6 +39,16 @@ export const BasicStyledMenuAnchor = styled(NavLinkBased)`
   }
 `;
 
+export const BasicStyledMenuSpan = styled.span`
+  transition: all ${defaultMenuListItemStyle.transitionDuration};
+  &:before {
+    transition: all ${defaultMenuListItemStyle.transitionDuration};
+  }
+  &:after {
+    transition: all ${defaultMenuListItemStyle.transitionDuration};
+  }
+`;
+
 const BasicMenuItem = (props: BasicMenuItemWithChildren) => {
   const { to, listClassName, aClassName, activeClassName } = props;
   const { hash } = useLocation();
