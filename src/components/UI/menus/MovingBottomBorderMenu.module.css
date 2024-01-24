@@ -1,11 +1,6 @@
 .a {
   border-radius: 2px;
-  margin: 10px;
   overflow: visible;
-}
-
-.li {
-  padding: 5px;
 }
 
 .a:before,

@@ -68,6 +68,7 @@ export const defaultMenuUnorderedListStyle: CSS.Properties = {
 export const defaultMenuListItemStyle: CSS.Properties = {
   listStyle: "none",
   transitionDuration: "400ms",
+  margin: "10px",
 };
 
 export const defaultMenuAnchorStyle: CSS.Properties = {
@@ -78,4 +79,6 @@ export const defaultMenuAnchorStyle: CSS.Properties = {
   padding: "10px 15px",
   position: "relative",
   transitionDuration: "400ms",
+  margin: "10px",
+  fontWeight: 600,
 };

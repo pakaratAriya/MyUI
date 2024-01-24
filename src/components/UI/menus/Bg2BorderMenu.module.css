@@ -1,0 +1,48 @@
+.a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a:before,
+.a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.a:before {
+  border: 2px solid black;
+  opacity: 0;
+  transform: scaleY(1.5);
+  border-left: 0;
+  border-right: 0;
+}
+
+.a:after {
+  background-color: black;
+  z-index: -1;
+  height: 80%;
+  opacity: 0;
+  transform: translateY(calc(10% + 2px));
+}
+
+.li:hover .a:before,
+.active.a:before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.li:hover .a:after,
+.active.a:after {
+  opacity: 1;
+}
+
+.active.a,
+.a:hover {
+  color: white;
+}

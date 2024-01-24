@@ -12,6 +12,7 @@ export type BasicMenuItemWithChildren = {
   listClassName?: string;
   aClassName?: string;
   activeClassName?: string;
+  attributes?: any;
 };
 
 export const BasicStyledMenuItemList = styled.li`
@@ -25,7 +26,9 @@ export const BasicStyledMenuItemList = styled.li`
   }
 `;
 
-export const BasicStyledMenuAnchor = styled(NavLinkBased)`
+export const BasicStyledMenuAnchor = styled(NavLinkBased)<{
+  isActive: boolean;
+}>`
   text-decoration: ${defaultMenuAnchorStyle.textDecoration};
   color: ${defaultMenuAnchorStyle.color};
   font-size: ${defaultMenuAnchorStyle.fontSize};
@@ -33,6 +36,8 @@ export const BasicStyledMenuAnchor = styled(NavLinkBased)`
   padding: ${defaultMenuAnchorStyle.padding};
   position: ${defaultMenuAnchorStyle.position};
   transition: all ${defaultMenuAnchorStyle.transitionDuration};
+  margin: ${defaultMenuAnchorStyle.margin};
+  font-weight: ${(props) => (props.isActive ? "600" : "100")};
   &:before,
   &:after {
     transition: all ${defaultMenuAnchorStyle.transitionDuration};
@@ -50,7 +55,7 @@ export const BasicStyledMenuSpan = styled.span`
 `;
 
 const BasicMenuItem = (props: BasicMenuItemWithChildren) => {
-  const { to, listClassName, aClassName, activeClassName } = props;
+  const { to, listClassName, aClassName, activeClassName, attributes } = props;
   const { hash } = useLocation();
   const isActive = hash.includes(to);
   return (
@@ -58,6 +63,8 @@ const BasicMenuItem = (props: BasicMenuItemWithChildren) => {
       <BasicStyledMenuAnchor
         to={to}
         className={isActive ? `${aClassName} ${activeClassName}` : aClassName}
+        isActive={isActive}
+        style={{ ...attributes }}
       >
         {props.children}
       </BasicStyledMenuAnchor>

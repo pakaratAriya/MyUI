@@ -1,7 +1,3 @@
-.li {
-  margin: 10px 15px;
-}
-
 .li:hover .a,
 .active.a {
   color: white;
